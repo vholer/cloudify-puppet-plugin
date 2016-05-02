@@ -332,7 +332,7 @@ class PuppetRHELInstaller(RubyGemJsonExtraPackageMixin, PuppetInstaller):
 
     @staticmethod
     def _installer_handles():
-        return platform.linux_distribution()[0] in (
+        return platform.linux_distribution(full_distribution_name=0)[0] in (
             'redhat', 'centos', 'fedora')
 
     def get_repo_package_url(self):
